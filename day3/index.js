@@ -1,185 +1,201 @@
-// // // // // // // // // // let arr = [1, 2, 3, 4, 5, 6];
 
-// // // // // // // // // // function chunArray(array, size) {
-// // // // // // // // // //     let result = [];
-// // // // // // // // // //     for (let i = 0; i<array.length; i+=size){
-// // // // // // // // // //         let chunk = array.slice(i, i+size)
-// // // // // // // // // //         result.push(chunk)
-// // // // // // // // // //     }
 
-// // // // // // // // // //     console.log(result)
+// //  Q.1 Chunk an array into smaller arrays in [1,2,3,4,5], chunkSize = 2 → [[1,2], [3,4], [5]]
 
-// // // // // // // // // // }
+//  let arr = [1, 2, 3, 4, 5, 6];
 
-// // // // // // // // // // chunArray(arr, 2)
+//  function chunArray(array, size) {
+//      let result = [];
+//      for (let i = 0; i<array.length; i+=size){
+//          let chunk = array.slice(i, i+size)
+//          result.push(chunk)
+//      }
 
+//      console.log(result)
 
+//  }
 
+//  chunArray(arr, 2) // [[1,2], [3,4], [5,6]]
 
-// // // // // // // // // let arr1 = [1, 3, 2, 4, 5, 2];
-// // // // // // // // // let arr2 = [1, 3, 2, 4, 5];
 
-// // // // // // // // // function isEqul(a, b) {
-// // // // // // // // //     if (a.length !== b.length) return console.log("is not Equl beacuse length is not same ")
+// Q.2 Check if two arrays are equal (order matters)
 
-// // // // // // // // //     for (let i = 0; i<arr1.length; i++){
-// // // // // // // // //         if(arr1[i] !== arr2[i]){
-// // // // // // // // //             return console.log(false)
-// // // // // // // // //         }
-// // // // // // // // //     }
+// let arr1 = [1, 3, 2, 4, 5, 2];
+// let arr2 = [1, 3, 2, 4, 5];
 
-// // // // // // // // //     return true
+// function isEqul(a, b) {
+//     if (a.length !== b.length) return console.log("is not Equl beacuse length is not same ")
 
-// // // // // // // // // }
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (arr1[i] !== arr2[i]) {
+//             return console.log(false)
+//         }
+//     }
 
-// // // // // // // // // console.log(isEqul(arr1, arr2))
+//     return true
 
+// }
 
+// console.log(isEqul(arr1, arr2)) // false
 
 
 
-// // // // // // // // let arr = [0, 1, 0, 3, 12];
+// Q.3 Move all zeros to the end of an array / [0, 1, 0, 3, 12] → [1, 3, 12, 0, 0]
 
-// // // // // // // // let nonZeroIndex = 0;
+//  let arr = [0, 1, 0, 3, 12];
 
-// // // // // // // // for (let i = 0; i < arr.length; i++) {
-// // // // // // // //     if (arr[i] !== 0) {
-// // // // // // // //         arr[nonZeroIndex] = arr[i];
-// // // // // // // //         nonZeroIndex++;
-// // // // // // // //     }
-// // // // // // // // }
+//  let nonZeroIndex = 0;
 
+//  for (let i = 0; i < arr.length; i++) {
+//      if (arr[i] !== 0) {
+//          arr[nonZeroIndex] = arr[i];
+//          nonZeroIndex++;
+//      }
+//  }
 
-// // // // // // // // for (let j = nonZeroIndex; j < arr.length; j++) {
-// // // // // // // //     arr[j] = 0;
-// // // // // // // // // 
 
-// // // // // // // // console.log(arr)
+//  for (let j = nonZeroIndex; j < arr.length; j++) {
+//      arr[j] = 0;
 
+//  console.log(arr)  //[1,3,12,0,0]
 
 
-// // // // // // // let arr = [0, 0, 1, 3, 12];
+// Q.4 Check if array is sorted or not
 
-// // // // // // // function isSorted(array) {
-// // // // // // //     for (let i = 0; i < array.length; i++) {
-// // // // // // //         if (array[i] > array[i + 1]) {
-// // // // // // //             return false
-// // // // // // //         }
-// // // // // // //     }
+// let arr = [0, 0, 1, 3, 12];
 
-// // // // // // //     return true
-// // // // // // // }
+// function isSorted(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] > array[i + 1]) {
+//             return false
+//         }
+//     }
 
+//     return true
+// }
 
-// // // // // // // console.log(isSorted(arr))
 
+// console.log(isSorted(arr)) // true
 
 
 
+// Q.5 Write a function that converts a string to camelCase
 
-// // // // // // let strs = "Dilip mali";  // dilipMali
+// let strs = "Dilip mali";  // dilipMali
 
-// // // // // // function toLowerCaseString(str) {
-// // // // // //     let words = str.split(/[\s-_]+/);
+// function toLowerCaseString(str) {
+//     let words = str.split(/[\s-_]+/);
 
 
-// // // // // //     let camelCaseStr = words[0].toLowerCase();
+//     let camelCaseStr = words[0].toLowerCase();
 
-// // // // // //     for (let i = 1; i < words.length; i++) {
-// // // // // //         camelCaseStr += words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
-// // // // // //     }
+//     for (let i = 1; i < words.length; i++) {
+//         camelCaseStr += words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+//     }
 
-// // // // // //     return camelCaseStr
-// // // // // // }
+//     return camelCaseStr
+// }
 
 
 
-// // // // // // console.log(toLowerCaseString(strs))
+// console.log(toLowerCaseString(strs)) // dilipMali
 
 
-// // // // // let fun1 = () => console.log("first 1 function run hua", new Date().toLocaleTimeString())
-// // // // // let fun2 = () => console.log("first 2 function run hua", new Date().toLocaleTimeString())
-// // // // // let fun3 = () => console.log("first 3 function run hua", new Date().toLocaleTimeString())
-// // // // // let fun4 = () => console.log("first 4 function run hua", new Date().toLocaleTimeString())
-// // // // // let fun5 = () => console.log("first 5 function run hua", new Date().toLocaleTimeString())
 
 
-// // // // // function scheduler(functions, interval) {
+// Q.6 Implement a scheduler that runs functions at a given interval / Run 5 functions, one
+// after another, each after 2 seconds.
 
-// // // // //     let index = 0;
 
-// // // // //     function runNext() {
-// // // // //         if (index < functions.length) {
-// // // // //             functions[index]()
-// // // // //             index++;
-// // // // //             setTimeout(runNext, interval)
-// // // // //         }else{
-// // // // //             console.log("Time complate")
-// // // // //         }
-// // // // //     }
-// // // // //     runNext()
+//  let fun1 = () => console.log("first 1 function run hua", new Date().toLocaleTimeString())
+//  let fun2 = () => console.log("first 2 function run hua", new Date().toLocaleTimeString())
+//  let fun3 = () => console.log("first 3 function run hua", new Date().toLocaleTimeString())
+//  let fun4 = () => console.log("first 4 function run hua", new Date().toLocaleTimeString())
+//  let fun5 = () => console.log("first 5 function run hua", new Date().toLocaleTimeString())
 
-// // // // // }
 
-// // // // // console.log(scheduler([fun1, fun2, fun3, fun4, fun5], 2000))
+//  function scheduler(functions, interval) {
 
+//      let index = 0;
 
+//      function runNext() {
+//          if (index < functions.length) {
+//              functions[index]()
+//              index++;
+//              setTimeout(runNext, interval)
+//          }else{
+//              console.log("Time complate")
+//          }
+//      }
+//      runNext()
 
-// // // // let arr = [0,0,0,0,0,0,0];
+//  }
+//  console.log(scheduler([fun1, fun2, fun3, fun4, fun5], 2000)) 
 
-// // // // function peakNumber(nums) {
-// // // //     for (let i = 0; i < nums.length; i++) {
-// // // //         let left = i === 0 ? -Infinity : nums[i - 1];
-// // // //         let right = i === nums.length - 1 ? -Infinity : nums[i + 1]
 
+//Q.7 find Peak Element An element that is greater than its neighbors.
 
-// // // //         if (nums[i] > left && nums[i] > right) {
-// // // //             return nums[i]
-// // // //         }
-// // // //     }
+// let arr = [1,2,3,1,2];
 
-// // // //     return console.log("not peak number")
+// function peakNumber(nums) {
+//     for (let i = 0; i < nums.length; i++) {
+//         let left = i === 0 ? -Infinity : nums[i - 1];
+//         let right = i === nums.length - 1 ? -Infinity : nums[i + 1]
 
-// // // // }
 
+//         if (nums[i] > left && nums[i] > right) {
+//             return nums[i]
+//         }
+//     }
 
-// // // // console.log(peakNumber(arr)
-// // // // )
+//     return console.log("not peak number")
 
+// }
 
 
+// console.log(peakNumber(arr)  // 3
+// )
 
 
-// // // let arr = [1, 2, 3, 4, 45, 43, 2, , 3, 4, 533, 8]
 
-// // // let Ascending = arr.sort((a, b) => a - b);
-// // // console.log(Ascending)
+// Q.8 Sort an Array in Ascending and Descending Order
+// 
+// let arr = [1, 2, 3, 4, 45, 43, 2, , 3, 4, 533, 8]
+// 
+// let Ascending = arr.sort((a, b) => a - b);
+// console.log(Ascending)  // [1,2,2,3,3,4,4,8,43,45,533]
+// 
+// let Descending = arr.sort((a, b) => b - a)
+// console.log(Descending) // [533,45,43,8,4,4,3,3,2,2,1]
 
-// // // let Descending = arr.sort((a, b) => b - a)
-// // // console.log(Descending)
 
+// Q.9 Find the Average of Numbers in an Array
 
-// // let arr = [5, 4, 57, 8, 8, 3];
 
-// // function AverageNumber(array) {
-// //     if (array === 0) return console.log("please add numbers")
+// let arr = [5, 4, 57, 8, 8, 3];
 
-// //     let sum = array.reduce((a, n) => a + n);
-// //     // console.log(sum)
-// //     let avarage = sum / array.length;
-// //     console.log(avarage)
+// function AverageNumber(array) {
+//     if (array === 0) return console.log("please add numbers")
 
-// // }
+//     let sum = array.reduce((a, n) => a + n);
+//     // console.log(sum)
+//     let avarage = sum / array.length;
+//     console.log(avarage) 
 
+// }
 
-// // AverageNumber(arr)
 
-// // 
-// // let str = "Frontend Developer"
-// // 
-// // let reverse = str.split(" ").reverse().join(" ")
-// // 
-// // console.log(reverse)
+// AverageNumber(arr) // 14.166666
+
+
+
+// Q.10 Reverse the order of words in "Frontend Developer ""
+
+// let str = "Frontend Developer"
+
+// let reverse = str.split(" ").reverse().join(" ")
+
+// console.log(reverse)
 
 
 
