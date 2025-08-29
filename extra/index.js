@@ -233,6 +233,149 @@
 
 
 
+// day 7
+
+// Q.1 Check if a number is an integer without using Number.isInteger().
+
+// function checkInt(num) {
+//     if (num % 1 === 0){
+//         return true
+//     }else{
+//         return false
+//     }
+// }
+
+// console.log(checkInt(32.22))
+
+
+
+
+
+
+// let user = {
+//     name: "Dilip",
+//     address: {
+//         city: "Pali",
+//         details: {
+//             pincode: 306401,
+//             landmark: "Bus Stand"
+//         }
+//     }
+// };
+
+// function flattenObject(obj, parentKey = "", result = {}) {
+//     for (let key in obj) {
+//         const newKey = parentKey ? parentKey + "." + key : key
+
+//         if (typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key])) {
+//             flattenObject(obj[key], newKey, result)
+//         } else {
+//             result[newKey] = obj[key]
+//         }
+
+//     }
+
+//     return result
+
+// }
+
+// console.log(flattenObject(user));
+
+
+
+// Q.3 Find the longest substring without repeating characters.
+
+// let obj1 = { a: 1, b: { c: 2 } };
+// let obj2 = { a: 1, b: { c: 2 } };
+
+
+// function deepEqual(obj1, obj2) {
+//     if (obj1 === obj2) return true;
+
+//     if (typeof obj1 !== "object" || obj1 === null ||
+//         typeof obj2 !== "object" || obj2 === null
+//     ) {
+//         return false
+//     }
+
+//     let key1 = Object.keys(obj1)
+//     let key2 = Object.keys(obj2)
+
+//     // console.log(key1)
+
+//     if (key1.length !== key2.length) return false
+
+//     for (let key of key1) {
+//         if (!key2.includes(key) || !deepEqual(obj1[key], obj2[key])){
+//             return false
+//         }
+//     }
+
+//     return true
+
+// }
+
+
+// console.log(deepEqual(obj1, obj2));
+
+
+
+// Q.5 Find all subsets of a given array.
+
+
+
+
+
+
+
+// function subsets(nums) {
+//     let result = [];
+
+//     function backtrack(start, current) {
+//         // Push current subset
+//         result.push([...current]);
+
+//         for (let i = start; i < nums.length; i++) {
+//             current.push(nums[i]);      // include nums[i]
+//             backtrack(i + 1, current);  // move forward
+//             current.pop();              // backtrack
+//         }
+//     }
+
+//     backtrack(0, []);
+//     return result;
+// }
+
+// // Test
+// console.log(subsets([1, 2, 3]));
+
+
+
+function longestPalindromeBrute(str) {
+  let longest = "";
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i; j < str.length; j++) {
+      let sub = str.substring(i, j + 1);
+      if (isPalindrome(sub) && sub.length > longest.length) {
+        longest = sub;
+      }
+    }
+  }
+
+  return longest;
+}
+
+function isPalindrome(s) {
+  return s === s.split("").reverse().join("");
+}
+
+console.log(longestPalindromeBrute("babad")); // "bab" ya "aba"
+// console.log(longestPalindromeBrute("cbbd"));  // "bb"
+
+
+
+
 
 
 
